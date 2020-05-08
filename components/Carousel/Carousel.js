@@ -52,34 +52,32 @@ function carouselCreater(){
 
   const leftButtonHandler=(event)=>{
 
-    if(index<imageArray.length-1){
+    if(index===imageArray.length-1){
+      imageArray[index].style.display='none'
+      index=0
+      imageArray[index].style.display='block'
+
+    }
+
+    else{
        imageArray[index].style.display='none'
        index++
        imageArray[index].style.display='block'
     }
-    if(index===imageArray.length-1){
-      imageArray[index].style.display='none'
-       index=0
-       imageArray[index].style.display='block'
-
-    }
 
   }
 
-  
   const rightButtonHandler=(event)=>{
 
-    if(index>0){
+    if(index=== 0){
+      imageArray[index].style.display='none'
+      index=imageArray.length-1;
+      imageArray[index].style.display='block'
+    } 
+    else{
        imageArray[index].style.display='none'
        index--
        imageArray[index].style.display='block'
-    }
-
-    if(index===0){
-      imageArray[index].style.display='none'
-       index=imageArray.length-1;
-       imageArray[index].style.display='block'
-
     }
 
   }
